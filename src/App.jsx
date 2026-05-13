@@ -1,23 +1,28 @@
-import "./styles/global.css";
+import CardProduto from "./components/CardProduto/CardProduto";
 
-import { TodoProvider } from "./context/TodoContext";
-
-import { TodoForm } from "./components/TodoForm";
-import { TodoList } from "./components/TodoList";
-import { TodoFilters } from "./components/TodoFilters";
-
-export default function App() {
+function App() {
   return (
-    <TodoProvider>
-      <div className="container">
-        <h1>Minha Todo List</h1>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px",
+        marginTop: "50px",
+      }}
+    >
+      <CardProduto
+        nome="Headphone Gamer RGB"
+        preco="R$ 299,90"
+        adicionado={true}
+      />
 
-        <TodoForm />
-
-        <TodoFilters />
-
-        <TodoList />
-      </div>
-    </TodoProvider>
+      <CardProduto
+        nome="Mouse Gamer"
+        preco="R$ 149,90"
+        adicionado={false}
+      />
+    </div>
   );
 }
+
+export default App;
